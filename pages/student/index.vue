@@ -25,7 +25,7 @@
     <div class="flex items-center justify-between mt-3">
       <h1 class="text-2xl font-semibold">List of Students Grade</h1>
       <h2 class="text-lg font-medium">
-        Average Grade: {{ calculateAverageGrade() }}
+        Average Grade: {{ calculateAverageGrade }}
       </h2>
       <Button
         type="button"
@@ -131,6 +131,9 @@ export default {
         });
       }
     },
+  },
+
+  computed: {
     calculateAverageGrade() {
       const sum = this.students.reduce(
         (total, student) => total + parseInt(student.grade),
